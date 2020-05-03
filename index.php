@@ -17,7 +17,16 @@
   </div>
   <div class="container" id="table">
     <table class="table">
-        <thead>
+    <div class="d-flex mb-3">
+      <div class="mr-auto p-2">
+        <button type="button" class="mr-auto p-2 btn btn-success">Add Task</button>
+      </div>      
+      <div class="p-2">
+        <button type="button" class="p-2 btn btn-default">Print</button>
+      </div>
+    </div>
+      <br>  
+      <thead>
             <tr>
             <th scope="col">#</th>
             <th scope="col">First</th>
