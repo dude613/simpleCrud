@@ -13,7 +13,7 @@
   </head>
   <body>
   <div class="container">
-        <h1 class="center center center">To Do List</h1>
+        <h1 class="center space">To Do List</h1>
   </div>
   <div class="container" id="table">
     <table class="table">
