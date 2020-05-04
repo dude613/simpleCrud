@@ -35,15 +35,15 @@
         <tbody>
             <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
+            <td>Eat</td>
             </tr>
             <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
+            <td>Sleep</td>
             </tr>
             <tr>
             <th scope="row">3</th>
-            <td>Larry</td>
+            <td>Learn</td>
             </tr>
         </tbody>
     </table>
