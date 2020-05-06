@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<?php include 'db.php';
+<?php require 'db.php';
 
 $sql = "select * from tasks";
 
@@ -41,6 +41,7 @@ $rows = $db->query($sql);
 
             <!-- Modal content-->
             <div class="modal-content">
+              <form method="post" action="add.php">
               <div class="modal-header">
               <h4 class="modal-title">Add Task</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -49,7 +50,7 @@ $rows = $db->query($sql);
                 <form>
                   <div class="form-group">
                     <label>Task Name</label>
-                    <input type="text required name="task class="form-control">
+                    <input type="text" required name="task" class="form-control">
                     </div>
                     <input type="submit" name="send" value="Add Task" class="btn btn-success">
                 </form>
