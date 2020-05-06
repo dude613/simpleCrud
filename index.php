@@ -27,10 +27,10 @@ $rows = $db->query($sql);
     <table class="table">
     <div class="d-flex mb-3">
       <div class="float-left">
-        <button type="button" data-target="#myModal" data-toggle="modal" class="p-2 btn btn-success">Add Task</button>
+        <button type="button" data-target="#myModal" data-toggle="modal" class="float-left btn btn-success">Add Task</button>
       </div>      
       <div class="float-right">
-        <button type="button" class="p-2 btn btn-default">Print</button>
+        <button type="button" class="float-right btn btn-default">Print</button>
         <br>
       </div>
     </div>
