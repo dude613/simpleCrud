@@ -3,7 +3,17 @@
 
 <?php require 'db.php';
 
-$sql = "select * from tasks";
+$page = (isset($GET['page']) ? $GET['page'] : 1);
+
+$perPage = (isset($GET['per-page']) && ($GET['per-page']) <= 50 ? $GET['per-page'] : 5);
+
+$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+
+$sql = "select * from tasks limit ".$start.",".$perPage." ";
+
+$totalRecords = $db->query("select * from tasks")->num_rows;
+
+$pages = ceil($totalRecords / $perPage);
 
 $rows = $db->query($sql);
 
@@ -24,13 +34,13 @@ $rows = $db->query($sql);
         <h1 class="center space">To Do List</h1>
   </div>
   <div class="container" id="table">
-    <table class="table">
-    <div class="d-flex mb-3">
-      <div class="float-left">
-        <button type="button" data-target="#myModal" data-toggle="modal" class="float-left btn btn-success">Add Task</button>
+    <div>
+    <div class="d-flex p-1">
+      <div class="mr-auto">
+        <button type="button" data-target="#myModal" data-toggle="modal" class="btn btn-success">Add Task</button>
       </div>      
-      <div class="float-right">
-        <button type="button" class="float-right btn btn-default">Print</button>
+      <div class="ml-auto">
+        <button type="button" class="btn btn-default">Print</button>
         <br>
       </div>
     </div>
@@ -84,6 +94,11 @@ $rows = $db->query($sql);
 
         </tbody>
     </table>
+    <div>
+                <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="">1</a></li>
+                </ul>
+    </div>
   </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -91,4 +106,3 @@ $rows = $db->query($sql);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-    
