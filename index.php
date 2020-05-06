@@ -26,12 +26,12 @@ $rows = $db->query($sql);
   <div class="container" id="table">
     <table class="table">
     <div class="d-flex mb-3">
-      <div class="mr-auto p-2">
-        <button type="button" data-target="#myModal" data-toggle="modal" class="mr-auto p-2 btn btn-success">Add Task</button>
+      <div class="float-left">
+        <button type="button" data-target="#myModal" data-toggle="modal" class="float-left btn btn-success">Add Task</button>
       </div>      
-      <div class="p-2">
-        <button type="button" class="p-2 btn btn-default">Print</button>
-        <hr><br>
+      <div class="float-right">
+        <button type="button" class="float-right btn btn-default">Print</button>
+        <br>
       </div>
     </div>
 
@@ -62,7 +62,7 @@ $rows = $db->query($sql);
 
           </div>
         </div>
-        
+      <table class="table">
       <thead>
             <tr>
             <th>#</th>
@@ -76,8 +76,8 @@ $rows = $db->query($sql);
 
             <th><?php echo $row['ID'] ?></th>
             <td class="col-md-10"><?php echo $row['Name'] ?></td>
-            <td><a href=" " class="btn btn-success">Edit</a></td>
-            <td><a href=" " class="btn btn-danger">Delete</a></td>
+            <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Edit</a></td>
+            <td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Delete</a></td>
             </tr>
             
               <?php endwhile; ?>
