@@ -1,7 +1,13 @@
-<?php include 'db.php' ?>
-
 <!doctype html>
 <html lang="en">
+
+<?php include 'db.php';
+
+$sql = "select * from tasks";
+
+$rows = $db->query($sql);
+
+?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -64,11 +70,17 @@
         </thead>
         <tbody>
             <tr>
-            <th>1</th>
-            <td class="col-md-10">Eat</td>
+
+              <?php while($row = $rows->fetch_assoc()): ?>        
+
+            <th><?php echo $row['ID'] ?></th>
+            <td class="col-md-10"><?php echo $row['Name'] ?></td>
             <td><a href=" " class="btn btn-success">Edit</a></td>
             <td><a href=" " class="btn btn-danger">Delete</a></td>
             </tr>
+            
+              <?php endwhile; ?>
+
         </tbody>
     </table>
   </div>
