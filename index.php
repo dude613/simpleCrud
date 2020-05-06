@@ -51,7 +51,7 @@ $rows = $db->query($sql);
                     <label>Task Name</label>
                     <input type="text required name="task class="form-control">
                     </div>
-                    <input type="submit" name="send" value="send" class="btn btn-success">
+                    <input type="submit" name="send" value="Add Task" class="btn btn-success">
                 </form>
               </div>
               <div class="modal-footer">
