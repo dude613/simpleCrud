@@ -28,22 +28,16 @@
       <br>  
       <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Task</th>
+            <th>#</th>
+            <th>Task</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-            <th scope="row">1</th>
-            <td>Eat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Sleep</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Learn</td>
+            <th>1</th>
+            <td class="col-md-10">Eat</td>
+            <td><a href=" " class="btn btn-success">Edit</a></td>
+            <td><a href=" " class="btn btn-danger">Delete</a></td>
             </tr>
         </tbody>
     </table>
