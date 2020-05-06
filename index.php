@@ -62,7 +62,7 @@ $rows = $db->query($sql);
 
           </div>
         </div>
-        
+      <table class="table">
       <thead>
             <tr>
             <th>#</th>
@@ -76,7 +76,7 @@ $rows = $db->query($sql);
 
             <th><?php echo $row['ID'] ?></th>
             <td class="col-md-10"><?php echo $row['Name'] ?></td>
-            <td><a href=" " class="btn btn-success">Edit</a></td>
+            <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Edit</a></td>
             <td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Delete</a></td>
             </tr>
             
