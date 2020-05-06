@@ -18,12 +18,12 @@ if(isset($_POST['send'])){
     $val = $db->query($sql);
 
     if($val){
-        echo "<h1>Successful</h1>";
-
-        echo "<a href='index.php' class='btn btn-success'>Home</a>";
+        header('location: index.php');
     }
     else {
         echo "<h1>Failed</h1>";
+
+        echo "<a href='index.php' class='btn btn-success'>Home</a>";
     }
 }
 
