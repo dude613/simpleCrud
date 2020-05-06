@@ -46,7 +46,7 @@ if(isset($_POST['send'])){
     <div class="d-flex mb-3">      
         <br>
     </div>  
-            <form>
+            <form method="post">
                 <div class="form-group">
                 <label>Task Name</label>
                 <input type="text" required name="task" value="<?php echo $row['Name']?>" class="form-control">
