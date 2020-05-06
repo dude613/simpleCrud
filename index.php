@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="en">
+
+<?php require 'db.php';
+
+$sql = "select * from tasks";
+
+$rows = $db->query($sql);
+
+?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,32 +27,61 @@
     <table class="table">
     <div class="d-flex mb-3">
       <div class="mr-auto p-2">
-        <button type="button" class="mr-auto p-2 btn btn-success">Add Task</button>
+        <button type="button" data-target="#myModal" data-toggle="modal" class="mr-auto p-2 btn btn-success">Add Task</button>
       </div>      
       <div class="p-2">
         <button type="button" class="p-2 btn btn-default">Print</button>
+        <hr><br>
       </div>
     </div>
-      <br>  
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <form method="post" action="add.php">
+              <div class="modal-header">
+              <h4 class="modal-title">Add Task</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label>Task Name</label>
+                    <input type="text" required name="task" class="form-control">
+                    </div>
+                    <input type="submit" name="send" value="Add Task" class="btn btn-success">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
       <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Task</th>
+            <th>#</th>
+            <th>Task</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-            <th scope="row">1</th>
-            <td>Eat</td>
+
+              <?php while($row = $rows->fetch_assoc()): ?>        
+
+            <th><?php echo $row['ID'] ?></th>
+            <td class="col-md-10"><?php echo $row['Name'] ?></td>
+            <td><a href=" " class="btn btn-success">Edit</a></td>
+            <td><a href=" " class="btn btn-danger">Delete</a></td>
             </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Sleep</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Learn</td>
-            </tr>
+            
+              <?php endwhile; ?>
+
         </tbody>
     </table>
   </div>
