@@ -51,7 +51,9 @@ if(isset($_POST['send'])){
                 <label>Task Name</label>
                 <input type="text" required name="task" value="<?php echo $row['Name']?>" class="form-control">
                 </div>
-                <input type="submit" name="send" value="Update Task" class="btn btn-success">
+                <input type="submit" name="send" value="Update Task" class="btn btn-success">&nbsp;
+                <a href="index.php" class="btn btn-warning">Back</a>
+                
             </form>
         </div>
   </div>
