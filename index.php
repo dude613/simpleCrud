@@ -70,7 +70,7 @@ $rows = $db->query($sql);
           </div>
         </div>
 
-      <div class="col-md-6 text-center">
+      <div class="d-flex p-1 justify-content-center">
       <p></p>
       <form action="search.php" method="post" class="form-group">
 
