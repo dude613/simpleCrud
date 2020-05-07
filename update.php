@@ -5,7 +5,7 @@
 
 include 'db.php';
 
-$id = $_GET['id'];
+$id = (int)$_GET['id'];
 
 $sql = "select * from tasks where ID = '$id'";
 
@@ -15,7 +15,7 @@ $row = $rows->fetch_assoc();
 
 if(isset($_POST['send'])){
 
-    $task = $_POST['task'];
+    $task = htmlspecialchars($_POST['task']);
 
     $sql2 = "update tasks set Name = '$task' where id = '$id'";
 
