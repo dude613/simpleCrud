@@ -95,7 +95,7 @@ $rows = $db->query($sql);
         <ul class="pagination justify-content-center">
 
         <?php for($i = 1 ; $i <= $pages; $i++): ?>
-        <li class="page-item"><a class="page-link" href="?pages=<?php echo $i; ?>&per-page<?php echo $perPage; ?>"><?php echo $i; ?></a></li>
+        <li class="page-item"><a class="page-link" href="?page=<?php echo $i; ?>&per-page<?php echo $perPage; ?>"><?php echo $i; ?></a></li>
 
         <?php endfor; ?>
 
