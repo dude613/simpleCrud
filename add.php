@@ -11,7 +11,7 @@ include 'db.php';
 
 if(isset($_POST['send'])){
 
-    $name = $_POST['task'];
+    $name = htmlspecialchars($_POST['task']);
 
     $sql = "Insert into tasks (Name) values ('$name')";
 
