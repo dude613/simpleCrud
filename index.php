@@ -71,18 +71,16 @@ $rows = $db->query($sql);
         </div>
 
       <div class="d-flex p-1 justify-content-center">
-      <p></p>
-      <form action="search.php" method="post" class="form-group">
-
-        <input type="text" placeholder="search" name="search" class="form-control">
-      </form>
+        <form action="search.php" method="post" class="form-group">
+          <input type="text" placeholder="search" name="search" class="form-control">
+        </form>
       </div>
 
         <table class="table">
-        <thead>
+        <thead class="thead-light" style="border-top: 0px; border-bottom: 0px;">
           <tr>
-          <th style="border-top: 0px; border-bottom: 0px;">#</th>
-          <th style="border-top: 0px; border-bottom: 0px;">Task</th>
+          <th>#</th>
+          <th>Task</th>
           </tr>
         </thead>
         <table class="table table-hover">
@@ -91,8 +89,8 @@ $rows = $db->query($sql);
 
               <?php while($row = $rows->fetch_assoc()): ?>        
 
-            <th scope="col"><?php echo $row['ID'] ?></th>
-            <td scope="col" class="col-md-10"><?php echo $row['Name'] ?></td>
+            <td st><?php echo $row['ID'] ?></td>
+            <td class="col"><?php echo $row['Name'] ?></td>
             <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Edit</a></td>
             <td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Delete</a></td>
             </tr>
