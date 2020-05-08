@@ -70,28 +70,27 @@ $rows = $db->query($sql);
           </div>
         </div>
 
-      <div class="col-md-6 text-center">
-      <p></p>
-      <form action="search.php" method="post" class="form-group">
-
-        <input type="text" placeholder="search" name="search" class="form-control">
-      </form>
+      <div class="d-flex p-1 justify-content-center">
+        <form action="search.php" method="post" class="form-group">
+          <input type="text" placeholder="search" name="search" class="form-control">
+        </form>
       </div>
 
-      <table class="table table-hover">
-      <thead>
-            <tr>
-            <th>#</th>
-            <th>Task</th>
-            </tr>
+        <table class="table">
+        <thead class="thead-light" style="border-top: 0px; border-bottom: 0px;">
+          <tr>
+          <th>#</th>
+          <th>Task</th>
+          </tr>
         </thead>
+        <table class="table table-hover">
         <tbody>
             <tr>
 
               <?php while($row = $rows->fetch_assoc()): ?>        
 
-            <th><?php echo $row['ID'] ?></th>
-            <td class="col-md-10"><?php echo $row['Name'] ?></td>
+            <td st><?php echo $row['ID'] ?></td>
+            <td class="col"><?php echo $row['Name'] ?></td>
             <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Edit</a></td>
             <td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Delete</a></td>
             </tr>
@@ -110,7 +109,6 @@ $rows = $db->query($sql);
 
         </ul>
     </div>
-  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
